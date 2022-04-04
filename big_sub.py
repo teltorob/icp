@@ -1,11 +1,11 @@
 fun sub(a, b) =
         let
                 fun subhelper([], [], carry) =
-                        if (carry=0) then [] else [] 
-                  | subhelper(xs,[],carry) =
+                        if (carry=0) then [] else raise exception 
+                  | subhelper(a,[],carry) =
                   if carry = 0 
-                  then xs
-                  else subhelper(xs,[carry],0)
+                  then a
+                  else subhelper(a,[carry],0)
 
                   | subhelper([],ys,carry) = subhelper(ys,[carry],0)
                   | subhelper(x::xs,y::ys,carry) =
